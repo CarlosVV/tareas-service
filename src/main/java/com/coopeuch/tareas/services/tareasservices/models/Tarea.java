@@ -6,8 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 @Data
 @Entity
@@ -16,8 +18,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Tarea {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer identificador;
     private String descripcion;
-    private LocalDateTime fechaCreacion;
+    private Timestamp fechaCreacion;
     private Boolean vigente;
 }

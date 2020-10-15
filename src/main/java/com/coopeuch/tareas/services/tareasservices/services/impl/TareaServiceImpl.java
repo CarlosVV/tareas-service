@@ -25,7 +25,13 @@ public class TareaServiceImpl implements TareaService {
 
     @Override
     public Tarea retrieveTarea(Integer identificador) {
-        return tareasRepository.getOne(identificador);
+        Tarea tarea = tareasRepository.getOne(identificador);
+        return Tarea.builder()
+                .identificador(identificador)
+                .descripcion(tarea.getDescripcion())
+                .fechaCreacion(tarea.getFechaCreacion())
+                .vigente(tarea.getVigente()).build();
+        //return tarea;//tareasRepository.getOne(identificador);
     }
 
     @Override
