@@ -31,7 +31,6 @@ public class TareaServiceImpl implements TareaService {
                 .descripcion(tarea.getDescripcion())
                 .fechaCreacion(tarea.getFechaCreacion())
                 .vigente(tarea.getVigente()).build();
-        //return tarea;//tareasRepository.getOne(identificador);
     }
 
     @Override
